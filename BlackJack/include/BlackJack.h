@@ -1,4 +1,6 @@
 #pragma once
-
+#include <random>
 #include <iostream>
-#include "GenericPlayer.h"
+#include <ctime>
+#include "Player.h"
+#include "House.h"

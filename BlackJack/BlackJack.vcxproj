@@ -140,13 +140,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BlackJack.cpp" />
+    <ClCompile Include="House.cpp" />
     <ClCompile Include="Koloda.cpp" />
     <ClCompile Include="GenericPlayer.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\BlackJack.h" />
+    <ClInclude Include="include\House.h" />
     <ClInclude Include="include\Koloda.h" />
     <ClInclude Include="include\GenericPlayer.h" />
+    <ClInclude Include="include\Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

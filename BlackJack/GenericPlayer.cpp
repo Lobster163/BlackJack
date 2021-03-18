@@ -4,9 +4,10 @@ void Hand::AddCard(Card* pCard)
 {
 	m_Cards.push_back(pCard);
 }
+
 Hand::~Hand()
 {
-	cout << "Hand destructor" << endl;
+	//cout << "Hand destructor" << endl;
 	ClearHand();
 }
 
@@ -20,34 +21,49 @@ void Hand::ClearHand()
 	m_Cards.erase(m_Cards.begin(), m_Cards.end());
 }
 
-int Hand::GetCountCard() { return m_Cards.size(); }
+int Hand::GetCountCard() const { return m_Cards.size(); }
 
-int Hand::GetSumCard()
+int Hand::GetSumCard() const
 {
 	int sum = 0;
 	for (int i = 0; i < GetCountCard(); ++i)
 	{
-		int val = m_Cards[i]->GetValue();
-		if (val == 1)
+		if (m_Cards[i]->GetFlipStatus())
 		{
-			if (sum < 21)
-				sum = sum + 11;
+			int val = m_Cards[i]->GetValue();
+			if (val == 1)
+			{
+				if (sum < 21)
+					sum = sum + 11;
+				else
+					sum = sum + 1;
+			}
 			else
-				sum = sum + 1;
-		}
-		else
-		{
-			if (val < 20)
-				sum = sum + val;
-			else
-				sum = sum + 10;
+			{
+				if (val < 20)
+					sum = sum + val;
+				else
+					sum = sum + 10;
+			}
 		}
 	}
 	return sum;
 }
 
-string Hand::GetNameCard(int numberCard){ return m_Cards[numberCard]->GetName(); }
-string GenericPlayer::GetNamePlayer() { return _name; }
+string Hand::GetNameCard(int numberCard) const { return m_Cards[numberCard]->GetName(); }
+
+void Hand::FlipCard(int numberCard) const
+{
+	m_Cards[numberCard]->Flip();
+}
+
+vector<Card*> Hand::GetCards() const
+{
+	return m_Cards;
+}
+
+
+string GenericPlayer::GetNamePlayer() const  { return _name; }
 uint8_t GenericPlayer::GetYear() { return _year;  }
 
 bool GenericPlayer::IsBoosted()
@@ -62,4 +78,24 @@ void GenericPlayer::Bust()
 {
 	if (IsBoosted())
 		cout << "Player " << _name << " Sum card > 21" << endl;
+}
+
+ostream& operator<<(ostream& out, const GenericPlayer& genPlayer)
+{
+	out << genPlayer.GetNamePlayer() << ":\t";
+
+	if (genPlayer.GetCountCard() > 0)
+	{
+		for (int i = 0; i < genPlayer.GetCountCard(); i++)
+			out << *genPlayer.GetCards()[i] << "\t";
+		
+		
+		if (genPlayer.GetSumCard() != 0)		
+			cout << "Sum=" << genPlayer.GetSumCard() << "";
+	}
+	else
+	{
+		out << "No card in hand";
+	}
+	return out << endl;
 }

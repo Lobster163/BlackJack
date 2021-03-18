@@ -3,25 +3,38 @@
 
 int main()
 {
-    GenericPlayer* player1 = new GenericPlayer("user1", 18);
+    srand(time(0));
+    vector<Player>Players;
 
-    player1->AddCard(new Card(Rank::_A, Suit::hearts));
-    player1->AddCard(new Card(Rank::_10, Suit::diamonds));
-    player1->AddCard(new Card(Rank::_K, Suit::diamonds));
+    for(int i=0; i<12;i++)
+        Players.push_back(Player("Alex_"+to_string(i)));
 
-    cout << "Cards in hand: " << endl;
+    for (int pl = 0; pl < Players.size(); pl++)
+        for (int i = 1; i < 3; i++)
+        {
+            int randCard = rand() % 12 + 1;
+            int randMast = rand() % 3 + 1;
+            Players[pl].AddCard(new Card((Rank)randCard, (Suit)randMast));
+            Players[pl].FlipCard(i - 1);
+            
+        }
+    
+    for (int i=0; i<Players.size();i++)
+        cout << "Count card on " << Players[i].GetNamePlayer() << " = " << Players[i].GetCountCard() << endl;
 
-    for (int i = 0; i < player1->GetCountCard(); ++i)
-        cout << player1->GetNameCard(i) << " ";
     cout << endl;
 
-    cout << "Count card = " << player1->GetCountCard() << endl;
-    cout << "Sum card = " << player1->GetSumCard() << endl;
+    if (Players[0].IsHitting())
+    {
+        //если надо еще карту - добавляем
+        Players[0].AddCard(new Card(Rank(rand() % 12 + 1), Suit(rand() % 3 + 1)));
+        Players[0].FlipCard(Players[0].GetCountCard()-1);
+    }
 
-    cout << player1->GetNamePlayer() << endl;
-    player1->Bust();
+    cout << endl;
 
-    delete player1;
+    for (int pl = 0; pl < Players.size(); pl++)
+        cout << Players[pl];
 
     return 0;
 }

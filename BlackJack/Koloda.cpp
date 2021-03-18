@@ -8,12 +8,12 @@ bool Card::Flip()
 
 Card::~Card()
 {
-	cout << "card destructor" << endl;
+	//cout << "card destructor" << endl;
 }
 
-int Card::GetValue() { return (int)m_Rank; }
+int Card::GetValue() const  { return (int)m_Rank; }
 
-string Card::GetName()
+string Card::GetName() const
 {
 	switch (m_Rank)
 	{
@@ -36,4 +36,37 @@ string Card::GetName()
 	case Rank::_A:
 		return "T";
 	}
+}
+
+bool Card::GetFlipStatus() const
+{
+	return m_IsFaceUp;
+}
+
+string Card::GetSuit() const
+{
+	switch (m_Suit)
+	{
+	case Suit::clubs:
+		return "clubs";
+	case Suit::diamonds:
+		return "diamonds";
+	case Suit::hearts:
+		return "hearts";
+	case Suit::spades:
+		return "spades";
+	}
+}
+
+ostream& operator<<(ostream& out, const Card& card)
+{
+	if (card.GetFlipStatus())
+	{
+		out << card.GetName() << "\""<< card.GetSuit() << "\"";
+	}
+	else
+	{
+		out << "XX";
+	}
+	return out;
 }
