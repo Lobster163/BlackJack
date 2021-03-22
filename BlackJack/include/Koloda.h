@@ -2,6 +2,10 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cassert>
+#include <random>
+#include <ctime>
+
 using namespace std;
 
 /// <summary>
@@ -46,8 +50,8 @@ class Card
 		Rank m_Rank;
 		bool m_IsFaceUp;
 	public:
-		Card() : m_Suit(Suit::clubs), m_Rank(Rank::_2), m_IsFaceUp(false) {};
-		Card(Rank valueCard, Suit suit) : m_Rank(valueCard), m_Suit(suit), m_IsFaceUp(false) {};
+		Card() : m_Suit(Suit::clubs), m_Rank(Rank::_2), m_IsFaceUp(true) {};
+		Card(Rank valueCard, Suit suit) : m_Rank(valueCard), m_Suit(suit), m_IsFaceUp(true) {};
 		~Card(); 
 
 		/// <summary>

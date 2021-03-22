@@ -7,7 +7,7 @@
 class House : public GenericPlayer
 {
 	public:
-		House() : GenericPlayer("Diller", 18) {};
+		House() : GenericPlayer("Deal", 18) {};
 		~House() {};
 		
 		/// <summary>
