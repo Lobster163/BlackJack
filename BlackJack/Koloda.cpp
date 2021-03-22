@@ -11,7 +11,13 @@ Card::~Card()
 	//cout << "card destructor" << endl;
 }
 
-int Card::GetValue() const  { return (int)m_Rank; }
+int Card::GetValue() const  
+{ 
+	if ((int)m_Rank >= 10)
+		return 10;
+	else
+		return (int)m_Rank;
+}
 
 string Card::GetName() const
 {

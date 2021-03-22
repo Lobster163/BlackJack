@@ -55,4 +55,11 @@ class Hand
 		/// <param name="numberCard">номер карты</param>
 		/// <returns>имя карты</returns>
 		string GetNameCard(int numberCard) const;
+
+		/// <summary>
+		/// Возврат текущего состоянии карты
+		/// </summary>
+		/// <param name="numberCard">номер карты в руке</param>
+		/// <returns></returns>
+		bool GetStatusFlipCard(int numberCard) const;		
 };

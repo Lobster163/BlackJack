@@ -1,4 +1,3 @@
 #pragma once
 
-#include "Player.h"
-#include "House.h"
+#include "Game.h"

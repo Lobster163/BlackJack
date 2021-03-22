@@ -5,7 +5,9 @@ bool Player::IsHitting() const
     cout << GetNamePlayer() << ", do you want a hit? (y / n): ";
     char result;
     cin >> result;
-    return (result == 'y' || result == 'Y');
+    bool choose = (result == 'y' || result == 'Y');
+    SetGameStatus(choose);
+    return choose;
 }
 
 void Player::Win() const

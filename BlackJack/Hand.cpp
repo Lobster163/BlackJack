@@ -66,3 +66,8 @@ vector<Card*>& Hand::GetCards()
 {
 	return m_Cards;
 }
+
+bool Hand::GetStatusFlipCard(int numberCard) const
+{
+	return this->m_Cards[numberCard]->GetFlipStatus();
+}

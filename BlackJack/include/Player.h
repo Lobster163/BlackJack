@@ -11,7 +11,7 @@ class Player : public GenericPlayer
 		~Player() {};
 		
 		/// <summary>
-		/// Проверка нужна ли еще карта
+		/// Запрос у игрока нужна ли еще карта
 		/// </summary>
 		/// <returns>True - нужна, False - нет</returns>
 		virtual bool IsHitting() const;
@@ -29,5 +29,5 @@ class Player : public GenericPlayer
 		/// <summary>
 		/// Вывод на экран имя и сообщения что он сыграл вничью
 		/// </summary>
-		void Push() const;
+		void Push() const;		
 };

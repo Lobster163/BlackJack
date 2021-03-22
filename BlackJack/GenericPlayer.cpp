@@ -24,7 +24,7 @@ ostream& operator<<(ostream& out, const GenericPlayer& genPlayer)
 	if (genPlayer.GetCountCard() > 0)
 	{
 		for (int i = 0; i < genPlayer.GetCountCard(); i++)
-			out << genPlayer.ñGetCards()[i] << "\t";
+			out << *genPlayer.ñGetCards()[i] << "\t";
 		
 		
 		if (genPlayer.GetSumCard() != 0)		

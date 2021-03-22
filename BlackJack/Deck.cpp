@@ -45,11 +45,11 @@ void Deck::Deal(Hand& aHand)
 
 void Deck::AdditionalCards(GenericPlayer& aGenericPlayer)
 {
-    while (!(aGenericPlayer.IsBusted()) && aGenericPlayer.IsHitting())
+    //если нету перебора и игрок хочет карту
+    if (!aGenericPlayer.IsBusted() && aGenericPlayer.IsHitting() && aGenericPlayer.GetGameStatus())
     {
         Deal(aGenericPlayer);
         cout << aGenericPlayer << endl;
-
         if (aGenericPlayer.IsBusted())
         {
             aGenericPlayer.Bust();
