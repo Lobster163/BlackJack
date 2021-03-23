@@ -3,7 +3,7 @@
 #include "Koloda.h"
 
 /// <summary>
-/// Класс представляет обьект рука игрока
+/// РљР»Р°СЃСЃ РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ РѕР±СЊРµРєС‚ СЂСѓРєР° РёРіСЂРѕРєР°
 /// </summary>
 class Hand
 {
@@ -14,52 +14,52 @@ class Hand
 		~Hand();
 
 		/// <summary>
-		/// Добавляет карту в руку
+		/// Р”РѕР±Р°РІР»СЏРµС‚ РєР°СЂС‚Сѓ РІ СЂСѓРєСѓ
 		/// </summary>
 		/// <param name="pCard"></param>
 		void AddCard(Card* pCard);
 
 		/// <summary>
-		/// Удаляет все карты из руки
+		/// РЈРґР°Р»СЏРµС‚ РІСЃРµ РєР°СЂС‚С‹ РёР· СЂСѓРєРё
 		/// </summary>
 		void ClearHand();
 
 		/// <summary>
-		/// Возвращает кол-во карт в руке
+		/// Р’РѕР·РІСЂР°С‰Р°РµС‚ РєРѕР»-РІРѕ РєР°СЂС‚ РІ СЂСѓРєРµ
 		/// </summary>
-		/// <returns>кол-во карт</returns>
+		/// <returns>РєРѕР»-РІРѕ РєР°СЂС‚</returns>
 		int GetCountCard() const;
 
 		/// <summary>
-		/// Возвращает сумму всех карт в руке
+		/// Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃСѓРјРјСѓ РІСЃРµС… РєР°СЂС‚ РІ СЂСѓРєРµ
 		/// </summary>
-		/// <returns>сумма карт</returns>
+		/// <returns>СЃСѓРјРјР° РєР°СЂС‚</returns>
 		int GetSumCard() const;
 
 		/// <summary>
-		/// Переворачиает заданную карту
+		/// РџРµСЂРµРІРѕСЂР°С‡РёР°РµС‚ Р·Р°РґР°РЅРЅСѓСЋ РєР°СЂС‚Сѓ
 		/// </summary>
-		/// <param name="numberCard">номер карты</param>
+		/// <param name="numberCard">РЅРѕРјРµСЂ РєР°СЂС‚С‹</param>
 		void FlipCard(int numberCard) const;
 
 		/// <summary>
-		/// Возвращает вектор карт
+		/// Р’РѕР·РІСЂР°С‰Р°РµС‚ РІРµРєС‚РѕСЂ РєР°СЂС‚
 		/// </summary>
-		/// <param name="numberCard">Обьект Карты</param>
-		vector<Card*> сGetCards() const;
+		/// <param name="numberCard">РћР±СЊРµРєС‚ РљР°СЂС‚С‹</param>
+		vector<Card*> СЃGetCards() const;
 		vector<Card*>& GetCards();
 
 		/// <summary>
-		/// Возвращает название заданной карты
+		/// Р’РѕР·РІСЂР°С‰Р°РµС‚ РЅР°Р·РІР°РЅРёРµ Р·Р°РґР°РЅРЅРѕР№ РєР°СЂС‚С‹
 		/// </summary>
-		/// <param name="numberCard">номер карты</param>
-		/// <returns>имя карты</returns>
+		/// <param name="numberCard">РЅРѕРјРµСЂ РєР°СЂС‚С‹</param>
+		/// <returns>РёРјСЏ РєР°СЂС‚С‹</returns>
 		string GetNameCard(int numberCard) const;
 
 		/// <summary>
-		/// Возврат текущего состоянии карты
+		/// Р’РѕР·РІСЂР°С‚ С‚РµРєСѓС‰РµРіРѕ СЃРѕСЃС‚РѕСЏРЅРёРё РєР°СЂС‚С‹
 		/// </summary>
-		/// <param name="numberCard">номер карты в руке</param>
+		/// <param name="numberCard">РЅРѕРјРµСЂ РєР°СЂС‚С‹ РІ СЂСѓРєРµ</param>
 		/// <returns></returns>
 		bool GetStatusFlipCard(int numberCard) const;		
 };

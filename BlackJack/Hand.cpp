@@ -26,27 +26,39 @@ int Hand::GetCountCard() const { return m_Cards.size(); }
 int Hand::GetSumCard() const
 {
 	int sum = 0;
+	int cnt = 0;
 	for (int i = 0; i < GetCountCard(); ++i)
 	{
 		if (m_Cards[i]->GetFlipStatus())
 		{
 			int val = m_Cards[i]->GetValue();
-			if (val == 1)
-			{
-				if (sum < 21)
-					sum = sum + 11;
-				else
-					sum = sum + 1;
-			}
-			else
+			if (val != 1)
 			{
 				if (val < 20)
 					sum = sum + val;
 				else
 					sum = sum + 10;
 			}
+			else
+				cnt++;
 		}
 	}
+
+	for (int i = 0; i < GetCountCard(); ++i)
+	{
+		if (m_Cards[i]->GetFlipStatus())
+		{
+			int val = m_Cards[i]->GetValue();
+			if (val == 1) // == TUZ
+			{
+				if (sum < 21 && cnt == 1)
+					sum = sum + 11;
+				else
+					sum = sum + 1;
+			}
+		}
+	}
+	
 	return sum;
 }
 
@@ -57,7 +69,7 @@ void Hand::FlipCard(int numberCard) const
 	m_Cards[numberCard]->Flip();
 }
 
-vector<Card*> Hand::ÒGetCards() const
+vector<Card*> Hand::—ÅGetCards() const
 {
 	return m_Cards;
 }

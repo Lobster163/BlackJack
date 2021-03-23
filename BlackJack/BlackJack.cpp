@@ -1,4 +1,4 @@
-﻿
+
 #include "include/BlackJack.h"
 
 int main()

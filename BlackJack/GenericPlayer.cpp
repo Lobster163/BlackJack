@@ -23,12 +23,17 @@ ostream& operator<<(ostream& out, const GenericPlayer& genPlayer)
 
 	if (genPlayer.GetCountCard() > 0)
 	{
-		for (int i = 0; i < genPlayer.GetCountCard(); i++)
-			out << *genPlayer.ñGetCards()[i] << "\t";
+		for (Card* card : genPlayer.ÑGetCards())
+			out << *card << "\t";
 		
 		
 		if (genPlayer.GetSumCard() != 0)		
-			cout << "Sum=" << genPlayer.GetSumCard() << "";
+			out << "Sum=" << genPlayer.GetSumCard() << "\t";
+
+		if (genPlayer.GetSumCard() >= 21)
+		{
+			genPlayer.SetGameStatus(false);
+		}
 	}
 	else
 	{

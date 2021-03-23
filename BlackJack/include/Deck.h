@@ -2,7 +2,7 @@
 #include "GenericPlayer.h"
 
 /// <summary>
-/// класс доски игры
+/// РєР»Р°СЃСЃ РґРѕСЃРєРё РёРіСЂС‹
 /// </summary>
 class Deck : virtual public Hand
 {
@@ -13,24 +13,24 @@ class Deck : virtual public Hand
         virtual ~Deck() {};
 
         /// <summary>
-        /// создает пачку карт
+        /// СЃРѕР·РґР°РµС‚ РїР°С‡РєСѓ РєР°СЂС‚
         /// </summary>
         void Populate();
 
         /// <summary>
-        /// тусуем карты
+        /// С‚СѓСЃСѓРµРј РєР°СЂС‚С‹
         /// </summary>
         void Shuffle();
 
         /// <summary>
-        /// раздать 1 карту на руку
+        /// СЂР°Р·РґР°С‚СЊ 1 РєР°СЂС‚Сѓ РЅР° СЂСѓРєСѓ
         /// </summary>
-        /// <param name="aHand">ссылка на руку</param>        
+        /// <param name="aHand">СЃСЃС‹Р»РєР° РЅР° СЂСѓРєСѓ</param>        
         void Deal(Hand& aHand);
 
         /// <summary>
-        /// раздает игроку доп карту, покпа он хочет их получать
+        /// СЂР°Р·РґР°РµС‚ РёРіСЂРѕРєСѓ РґРѕРї РєР°СЂС‚Сѓ, РїРѕРєРїР° РѕРЅ С…РѕС‡РµС‚ РёС… РїРѕР»СѓС‡Р°С‚СЊ
         /// </summary>
-        void AdditionalCards(GenericPlayer& aGenericPlayer);
+        void AdditionalCards(GenericPlayer& aGenericPlayer);        
 };
 

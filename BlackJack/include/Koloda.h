@@ -9,7 +9,7 @@
 using namespace std;
 
 /// <summary>
-/// перечесление мастей карт
+/// РїРµСЂРµС‡РµСЃР»РµРЅРёРµ РјР°СЃС‚РµР№ РєР°СЂС‚
 /// </summary>
 enum class Suit
 {
@@ -20,7 +20,7 @@ enum class Suit
 };
 
 /// <summary>
-/// перечесление значение карт
+/// РїРµСЂРµС‡РµСЃР»РµРЅРёРµ Р·РЅР°С‡РµРЅРёРµ РєР°СЂС‚
 /// </summary>
 enum class Rank
 {
@@ -41,7 +41,7 @@ enum class Rank
 };
 
 /// <summary>
-/// Класс представлеяет обьект карту
+/// В Р»Р°СЃСЃ РїСЂРµРґСЃС‚Р°РІР»РµВ¤РµС‚ РѕР±СЊРµРєС‚ РєР°СЂС‚Сѓ
 /// </summary>
 class Card
 {
@@ -55,41 +55,41 @@ class Card
 		~Card(); 
 
 		/// <summary>
-		/// Переворачивает карту
+		/// С•РµСЂРµРІРѕСЂР°С‡РёРІР°РµС‚ РєР°СЂС‚Сѓ
 		/// </summary>
-		/// <returns>True - лицом к верху. False - лицом к низу</returns>
+		/// <returns>True - Р»РёС†РѕРј Рє РІРµСЂС…Сѓ. False - Р»РёС†РѕРј Рє РЅРёР·Сѓ</returns>
 		bool Flip();
 
 		/// <summary>
-		/// Возврашает значение карты
+		/// В¬РѕР·РІСЂР°С€Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ РєР°СЂС‚С‹
 		/// </summary>
-		/// <returns>значение карты</returns>
+		/// <returns>Р·РЅР°С‡РµРЅРёРµ РєР°СЂС‚С‹</returns>
 		int GetValue() const;
 
 		/// <summary>
-		/// Возвращает название карты
+		/// В¬РѕР·РІСЂР°С‰Р°РµС‚ РЅР°Р·РІР°РЅРёРµ РєР°СЂС‚С‹
 		/// </summary>
-		/// <returns>имя карты</returns>
+		/// <returns>РёРјВ¤ РєР°СЂС‚С‹</returns>
 		string GetName() const;
 
 		/// <summary>
-		/// Возвращает масть карты
+		/// В¬РѕР·РІСЂР°С‰Р°РµС‚ РјР°СЃС‚СЊ РєР°СЂС‚С‹
 		/// </summary>
-		/// <returns>масть карты</returns>
+		/// <returns>РјР°СЃС‚СЊ РєР°СЂС‚С‹</returns>
 		string GetSuit() const;
 
 		/// <summary>
-		/// Возвращает состояние карты
+		/// В¬РѕР·РІСЂР°С‰Р°РµС‚ СЃРѕСЃС‚РѕВ¤РЅРёРµ РєР°СЂС‚С‹
 		/// </summary>
-		/// <returns>True - лицом к верху. False - лицом к низу</returns>
+		/// <returns>True - Р»РёС†РѕРј Рє РІРµСЂС…Сѓ. False - Р»РёС†РѕРј Рє РЅРёР·Сѓ</returns>
 		bool GetFlipStatus() const;
 
 
 		/// <summary>
-		/// перегрузка вывода для класса
+		/// РїРµСЂРµРіСЂСѓР·РєР° РІС‹РІРѕРґР° РґР»В¤ РєР»Р°СЃСЃР°
 		/// </summary>
-		/// <param name="out">выводной поток</param>
-		/// <param name="card">ссылка на класс</param>
+		/// <param name="out">РІС‹РІРѕРґРЅРѕР№ РїРѕС‚РѕРє</param>
+		/// <param name="card">СЃСЃС‹Р»РєР° РЅР° РєР»Р°СЃСЃ</param>
 		/// <returns></returns>
 		friend ostream& operator<<(ostream& out, const Card& card);
 };

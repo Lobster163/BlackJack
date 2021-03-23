@@ -10,11 +10,15 @@ class Game
 		unique_ptr<House> m_House;
 		vector<unique_ptr<Player>> m_Players;
 
-
 	public:
 		Game(const vector<string>& names);
 		~Game() {};
+
+		/// <summary>
+		/// начала игры
+		/// </summary>
 		void Play();
 
+		friend ostream& operator<<(ostream& out, const Game& game);
 
 };

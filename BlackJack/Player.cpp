@@ -12,15 +12,15 @@ bool Player::IsHitting() const
 
 void Player::Win() const
 {
-    cout << GetNamePlayer() << "win" << endl;
+    cout << GetNamePlayer() << " win" << endl;
 }
 
 void Player::Lose() const
 {
-    cout << GetNamePlayer() << "loses" << endl;
+    cout << GetNamePlayer() << " loses" << endl;
 }
 
 void Player::Push() const
 {
-    cout << GetNamePlayer() << "pushes" << endl;
+    cout << GetNamePlayer() << " pushes" << endl;
 }

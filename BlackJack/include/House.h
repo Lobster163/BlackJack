@@ -2,7 +2,7 @@
 #include "GenericPlayer.h"
 
 /// <summary>
-/// Класс представляет игрока ввиде диллера
+/// РљР»Р°СЃСЃ РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ РёРіСЂРѕРєР° РІРІРёРґРµ РґРёР»Р»РµСЂР°
 /// </summary>
 class House : public GenericPlayer
 {
@@ -11,13 +11,13 @@ class House : public GenericPlayer
 		~House() {};
 		
 		/// <summary>
-		/// Проверка нужна ли еще карта
+		/// РџСЂРѕРІРµСЂРєР° РЅСѓР¶РЅР° Р»Рё РµС‰Рµ РєР°СЂС‚Р°
 		/// </summary>
-		/// <returns>True - нужна, False - нет</returns>
+		/// <returns>True - РЅСѓР¶РЅР°, False - РЅРµС‚</returns>
 		virtual bool IsHitting() const;
 
 		/// <summary>
-		/// Переворачивает первую карту
+		/// РџРµСЂРµРІРѕСЂР°С‡РёРІР°РµС‚ РїРµСЂРІСѓСЋ РєР°СЂС‚Сѓ
 		/// </summary>
 		void FlipFirstCard();
 };

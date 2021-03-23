@@ -2,7 +2,7 @@
 #include "Hand.h"
 
 /// <summary>
-/// Класс представляет базовый класс игрока и диллера
+/// РљР»Р°СЃСЃ РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ Р±Р°Р·РѕРІС‹Р№ РєР»Р°СЃСЃ РёРіСЂРѕРєР° Рё РґРёР»Р»РµСЂР°
 /// </summary>
 class GenericPlayer : virtual public Hand
 {
@@ -15,36 +15,45 @@ class GenericPlayer : virtual public Hand
 		virtual bool IsHitting() const = 0;
 
 		/// <summary>
-		/// Вернет Имя игрока
+		/// Р’РµСЂРЅРµС‚ РРјСЏ РёРіСЂРѕРєР°
 		/// </summary>
 		/// <returns></returns>
 		string GetNamePlayer() const;
 
 		/// <summary>
-		/// Вернет кол-во лет игроку
+		/// Р’РµСЂРЅРµС‚ РєРѕР»-РІРѕ Р»РµС‚ РёРіСЂРѕРєСѓ
 		/// </summary>
 		/// <returns></returns>
 		uint8_t GetYear();
 
 		/// <summary>
-		/// возвращает bool значение, есть ли у игрока перебор
+		/// РІРѕР·РІСЂР°С‰Р°РµС‚ bool Р·РЅР°С‡РµРЅРёРµ, РµСЃС‚СЊ Р»Рё Сѓ РёРіСЂРѕРєР° РїРµСЂРµР±РѕСЂ
 		/// </summary>
 		/// <returns></returns>
 		bool IsBusted();
 
 		/// <summary>
-		///  выводит на экран имя игрока и объявляет, что у него перебор
+		///  РІС‹РІРѕРґРёС‚ РЅР° СЌРєСЂР°РЅ РёРјСЏ РёРіСЂРѕРєР° Рё РѕР±СЉСЏРІР»СЏРµС‚, С‡С‚Рѕ Сѓ РЅРµРіРѕ РїРµСЂРµР±РѕСЂ
 		/// </summary>
 		void Bust();
 
 		/// <summary>
-		/// перегрузка вывода для класса
+		/// РїРµСЂРµРіСЂСѓР·РєР° РІС‹РІРѕРґР° РґР»СЏ РєР»Р°СЃСЃР°
 		/// </summary>
-		/// <param name="os">выводной поток</param>
-		/// <param name="genPlayer">ссылка на класс</param>
+		/// <param name="os">РІС‹РІРѕРґРЅРѕР№ РїРѕС‚РѕРє</param>
+		/// <param name="genPlayer">СЃСЃС‹Р»РєР° РЅР° РєР»Р°СЃСЃ</param>
 		/// <returns></returns>
 		friend ostream& operator<<(ostream& out, const GenericPlayer& genPlayer);
 
+		/// <summary>
+		/// РЈСЃС‚Р°РЅРѕРІРєР° Р°РєС‚РёРІРЅРѕСЃС‚Рё РёРіСЂРѕРєР°
+		/// </summary>
+		/// <param name="status"></param>
 		void SetGameStatus(bool status) const { inGame = status; }
+
+		/// <summary>
+		/// Р·Р°РїСЂРѕСЃ СЃС‚Р°С‚СѓСЃР° Р°РєС‚РёРІРЅРѕСЃС‚Рё
+		/// </summary>
+		/// <returns></returns>
 		bool GetGameStatus() const { return inGame; }
 };

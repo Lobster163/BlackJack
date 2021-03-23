@@ -28,7 +28,6 @@ void Deck::Populate()
 
 void Deck::Shuffle() 
 {
-    cout << "------------------------------------------\n";
     random_shuffle(GetCards().begin(), GetCards().end());
 }
 
@@ -45,14 +44,10 @@ void Deck::Deal(Hand& aHand)
 
 void Deck::AdditionalCards(GenericPlayer& aGenericPlayer)
 {
-    //åñëè íåòó ïåðåáîðà è èãðîê õî÷åò êàðòó
-    if (!aGenericPlayer.IsBusted() && aGenericPlayer.IsHitting() && aGenericPlayer.GetGameStatus())
-    {
-        Deal(aGenericPlayer);
-        cout << aGenericPlayer << endl;
-        if (aGenericPlayer.IsBusted())
+    //ÐµÑÐ»Ð¸ Ð½ÐµÑ‚Ñƒ Ð¿ÐµÑ€ÐµÐ±Ð¾Ñ€Ð° Ð¸ Ð¸Ð³Ñ€Ð¾Ðº Ñ…Ð¾Ñ‡ÐµÑ‚ ÐºÐ°Ñ€Ñ‚Ñƒ
+    if (!aGenericPlayer.IsBusted() && aGenericPlayer.GetGameStatus())
+        if (aGenericPlayer.IsHitting())
         {
-            aGenericPlayer.Bust();
+            Deal(aGenericPlayer);
         }
-    }
 }
